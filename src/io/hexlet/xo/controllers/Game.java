@@ -9,8 +9,8 @@ public class Game {
     static { GAME_NAME = "XO"; }
 
     private Player[] players;
-    private Field field;
-    CurrentMoveController currentMoveController;
+    public Field field;
+    public CurrentMoveController currentMoveController;
     MoveController moveController;
     WinnerController winnerController;
 
