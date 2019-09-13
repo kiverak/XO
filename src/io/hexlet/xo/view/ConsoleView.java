@@ -1,11 +1,22 @@
 package io.hexlet.xo.view;
 
-import io.hexlet.xo.model.Game;
+import io.hexlet.xo.controllers.Game;
+import io.hexlet.xo.model.Player;
 
 public class ConsoleView {
 
-    public void show (final Game game) {
+    private Game game;
 
+    public ConsoleView(Game game) {
+        this.game = game;
+    }
+
+    public void showGameName () {
+        System.out.println(game.getGameName());
+    }
+
+    public void showPlayersName () {
+        System.out.println(game.getPlayers());
     }
 
     public boolean move (Game game){

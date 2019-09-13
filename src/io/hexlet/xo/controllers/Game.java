@@ -1,8 +1,7 @@
-package io.hexlet.xo.model;
+package io.hexlet.xo.controllers;
 
-import io.hexlet.xo.controllers.CurrentMoveController;
-import io.hexlet.xo.controllers.MoveController;
-import io.hexlet.xo.controllers.WinnerController;
+import io.hexlet.xo.model.Field;
+import io.hexlet.xo.model.Player;
 
 public class Game {
     private static final String GAME_NAME;
@@ -15,7 +14,13 @@ public class Game {
     MoveController moveController;
     WinnerController winnerController;
 
-    public void printGameName () { System.out.println(Game.GAME_NAME); }
+    public static String getGameName() {
+        return GAME_NAME;
+    }
+
+    public Player[] getPlayers() {
+        return players;
+    }
 
     public void showGameName() {}
 

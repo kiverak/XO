@@ -1,25 +1,17 @@
 package io.hexlet.xo.model;
 
 public class Field {
-    String f00;
-    String f01;
-    String f02;
-    String f10;
-    String f11;
-    String f12;
-    String f20;
-    String f21;
-    String f22;
+    private String[][] figures = new String[3][3];
 
     public int getSize(){
-        return 3;
+        return figures.length;
     };
 
-    public String getFigure(Point point){
-        return null;
+    public String getFigure(final Point point){
+        return figures[point.getX()][point.getY()];
     }
 
     public void setFigure (Point point, String figure) {
-
+        figures[point.getX()][point.getY()] = figure;
     }
 }
