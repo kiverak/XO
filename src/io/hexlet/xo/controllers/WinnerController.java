@@ -1,10 +1,11 @@
 package io.hexlet.xo.controllers;
 
 import io.hexlet.xo.model.Field;
+import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Point;
 
 public class WinnerController {
-    public String getWinner(Field field){
+    public Figure getWinner(Field field){
 
         Point p1 = new Point();
         Point p2 = new Point();

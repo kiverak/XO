@@ -6,10 +6,13 @@ import io.hexlet.xo.controllers.*;
 
 import java.util.Arrays;
 
+import static io.hexlet.xo.model.Figure.O;
+import static io.hexlet.xo.model.Figure.X;
+
 public class Main {
 
     public static void main(String... args) {
-        final Field field = new Field();
+        final Field field = new Field(3);
         final CurrentMoveController cmc = new CurrentMoveController();
         ConsoleView print = new ConsoleView();
         WinnerController wc = new WinnerController();
@@ -18,7 +21,7 @@ public class Main {
 //        p.x = 1;
 //        p.y = 1;
 
-        if (!cmc.currentMove(field).equals("X")) {
+        if (!cmc.currentMove(field).equals(X)) {
             throw new RuntimeException("do not returns X when the field is empty");
         }
 
@@ -26,7 +29,7 @@ public class Main {
             for (int i2 = 0; i2 < field.getSize(); i2++) {
                 p.setX(i);
                 p.setY(i2);
-                final String figure = (i * 3 + i2) % 2 == 0 ? "X" : "O";
+                final Figure figure = ((i * 3 + i2) % 2 == 0 ? X : O);
                 field.setFigure(p, figure);
                 //System.out.printf("putting figure: %s to the: X:%d Y:%d\n", figure, p.x, p.y);
                 if (cmc.currentMove(field).equals(figure)) {
