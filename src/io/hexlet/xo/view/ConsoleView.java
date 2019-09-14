@@ -15,6 +15,8 @@ public class ConsoleView {
         this.game = game;
     }
 
+
+
     public void showGameName () {
         System.out.println(game.getGameName());
     }
@@ -42,3 +44,62 @@ public class ConsoleView {
         return null;
     }
 }
+
+
+//public class ConsoleView {
+//
+//    private static final String LINE_CHARACTER = "~";
+//
+//    protected final GameController gameController;
+//
+//    // BEGIN (write your solution here)
+//    public ConsoleView (GameController gameController) {
+//        this.gameController = gameController;
+//    }
+//    // END
+//
+//    public void start() {
+//        System.out.println("Please input coordinates: ");
+//        int x = getCoordinate("X");
+//        int y = getCoordinate("Y");
+//
+//    }
+//
+//    public void showGameName() {
+//        System.out.println(gameController.getGameName());
+//    }
+//
+//    public void showPlayersName() {
+//
+//        Arrays.stream(gameController.getPlayers())
+//                .map(Player::getName)
+//                .forEach(System.out::println);
+//
+//    }
+//
+//    void showLine(final int size) {
+//        for (int i = 0; i < size; i = i + 1) {
+//            System.out.print(LINE_CHARACTER);
+//        }
+//        System.out.println();
+//    }
+//
+//    private int getCoordinate(final String coordinateName) {
+//        int counter = 0;
+//        do {
+//            System.out.print(String.format("Input the coordinate %s: ", coordinateName));
+//            try {
+//                final Scanner in = new Scanner(System.in);
+//                return in.nextInt();
+//            } catch (final InputMismatchException e) {
+//                System.out.println("Coordinate is incorrect");
+//                counter += 1; // counter = counter + 1;
+//            }
+//        } while(counter < 3);
+//        return -1;
+//    }
+//
+//    public GameController getGameController() {
+//        return gameController;
+//    }
+//}
