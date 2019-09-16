@@ -10,7 +10,7 @@ import java.util.stream.IntStream;
 public class Game {
 
     private static final String DEFAULT_GAME_NAME = "XO";
-    private static final Field DEFAULT_FIELD = new Field(3);
+    private static final Field DEFAULT_FIELD = new Field();
     private static final Player[] DEFAULT_PLAYERS = {new Player("Player1", Figure.X),
                                                     new Player("Player2", Figure.O)};
 
@@ -27,7 +27,7 @@ public class Game {
     }
 
     public Game (String gameName, Player[] players, Field field) {
-        if(gameName != null && gameName != "") this.gameName = gameName;
+        if(gameName != null && !gameName.equals("")) this.gameName = gameName;
         else this.gameName = DEFAULT_GAME_NAME;
         if(players != null) this.players = players;
         else this.players = DEFAULT_PLAYERS;
@@ -85,10 +85,10 @@ public class Game {
     }
 
     public String getGameName() {
-        return this.gameName;
+        return gameName;
     }
 
-    public Field getBoard() {
+    public Field getField() {
         return field;
     }
 

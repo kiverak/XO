@@ -1,10 +1,7 @@
 import io.hexlet.xo.model.*;
 import io.hexlet.xo.model.Point;
-import io.hexlet.xo.model.exceptions.*;
 import io.hexlet.xo.view.*;
 import io.hexlet.xo.controllers.*;
-
-import java.util.Arrays;
 
 import static io.hexlet.xo.model.Figure.O;
 import static io.hexlet.xo.model.Figure.X;
@@ -12,14 +9,12 @@ import static io.hexlet.xo.model.Figure.X;
 public class Main {
 
     public static void main(String... args) {
-        final Field field = new Field(3);
+        final Field field = new Field();
         final CurrentMoveController cmc = new CurrentMoveController();
         ConsoleView print = new ConsoleView();
         WinnerController wc = new WinnerController();
 
-        final Point p = new Point();
-//        p.x = 1;
-//        p.y = 1;
+        final Point p = new Point(1, 1);
 
         if (!cmc.currentMove(field).equals(X)) {
             throw new RuntimeException("do not returns X when the field is empty");

@@ -5,20 +5,12 @@ import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Point;
 
 public class WinnerController {
-    public Figure getWinner(Field field){
 
-        Point p1 = new Point();
-        Point p2 = new Point();
-        Point p3 = new Point();
-
+    public Figure getWinner(final Field field) {
         for (int i = 0; i < field.getSize(); i++) {
-            p1.setX(0);
-            p2.setX(1);
-            p3.setX(2);
-
-            p1.setY(i);
-            p2.setY(i);
-            p3.setY(i);
+            Point p1 = new Point(0, i);
+            Point p2 = new Point(1, i);
+            Point p3 = new Point(2, i);
 
             if (field.getFigure(p1) != null
                     && field.getFigure(p2) != null
@@ -31,13 +23,9 @@ public class WinnerController {
         }
 
         for (int i = 0; i < field.getSize(); i++) {
-            p1.setX(i);
-            p2.setX(i);
-            p3.setX(i);
-
-            p1.setY(0);
-            p2.setY(1);
-            p3.setY(2);
+            Point p1 = new Point(i, 1);
+            Point p2 = new Point(i, 1);
+            Point p3 = new Point(i, 2);
 
             if (field.getFigure(p1) != null
                     && field.getFigure(p2) != null
@@ -50,13 +38,9 @@ public class WinnerController {
         }
 
         {
-            p1.setX(0);
-            p2.setX(1);
-            p3.setX(2);
-
-            p1.setY(0);
-            p2.setY(1);
-            p3.setY(2);
+            Point p1 = new Point(0, 0);
+            Point p2 = new Point(1, 1);
+            Point p3 = new Point(2, 2);
 
             if (field.getFigure(p1) != null
                     && field.getFigure(p2) != null
@@ -69,13 +53,9 @@ public class WinnerController {
         }
 
         {
-            p1.setX(2);
-            p2.setX(1);
-            p3.setX(0);
-
-            p1.setY(0);
-            p2.setY(1);
-            p3.setY(2);
+            Point p1 = new Point(2, 0);
+            Point p2 = new Point(1, 1);
+            Point p3 = new Point(0, 2);
 
             if (field.getFigure(p1) != null
                     && field.getFigure(p2) != null
@@ -86,7 +66,6 @@ public class WinnerController {
                 return field.getFigure(p1);
             }
         }
-
         return null;
     }
 }

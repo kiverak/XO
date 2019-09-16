@@ -3,12 +3,8 @@ package io.hexlet.xo.model;
 public class Player {
     private final String name;
     private final Figure figure;
-    String address;
-    int score;
-    String nick;
-    String uuid;
 
-    public Player(String name, Figure figure) {
+    public Player(final String name, final Figure figure) {
         this.name = name;
         this.figure = figure;
     }
