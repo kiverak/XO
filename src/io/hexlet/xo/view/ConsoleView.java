@@ -2,7 +2,6 @@ package io.hexlet.xo.view;
 
 import io.hexlet.xo.controllers.Game;
 import io.hexlet.xo.model.Field;
-import io.hexlet.xo.model.Player;
 import io.hexlet.xo.model.Point;
 
 public class ConsoleView {
@@ -30,7 +29,7 @@ public class ConsoleView {
     }
 
     public String show(Field field) {
-        Point point = new Point();
+        Point point = new Point(y);
         for (int i = 0; i < field.getSize(); i++) {
             for (int j = 0; j < field.getSize(); j++) {
                 point.setX(i);
