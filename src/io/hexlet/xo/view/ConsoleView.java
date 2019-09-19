@@ -29,7 +29,7 @@ public class ConsoleView {
     }
 
     public String show(Field field) {
-        Point point = new Point(y);
+        Point point = new Point(0, 0);
         for (int i = 0; i < field.getSize(); i++) {
             for (int j = 0; j < field.getSize(); j++) {
                 point.setX(i);

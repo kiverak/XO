@@ -5,7 +5,9 @@ import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Point;
 
 public class MoveController {
-    public boolean applyFigure(Field field, Point point, Figure figure){
+    public boolean applyFigure(final Field field,
+                               final Point point,
+                               final Figure figure){
         if(point.getX() == -1 || point.getY() == -1) return false;
         else if (!checkFigureIsEmpty(field, point)) return false;
         else field.setFigure(point, figure);

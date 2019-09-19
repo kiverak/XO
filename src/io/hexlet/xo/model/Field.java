@@ -11,7 +11,7 @@ public class Field {
         return figures;
     }
 
-        public Figure getFigure(final Point point){
+    public Figure getFigure(final Point point){
         return figures[point.getX()][point.getY()];
     }
 
@@ -19,7 +19,7 @@ public class Field {
         return figures[x][y];
     }
 
-    public void setFigure (Point point, Figure figure) {
+    public void setFigure (final Point point, final Figure figure) {
         this.figures[point.getX()][point.getY()] = figure;
     }
 }

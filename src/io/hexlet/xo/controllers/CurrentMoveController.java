@@ -3,7 +3,6 @@ package io.hexlet.xo.controllers;
 import io.hexlet.xo.model.Field;
 import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Point;
-
 import static io.hexlet.xo.model.Figure.O;
 import static io.hexlet.xo.model.Figure.X;
 
@@ -22,5 +21,15 @@ public class CurrentMoveController {
             }
         if (numOfX == numOfO) return X;
         else return O;
+    }
+
+    private int countFiguresInTheRow(final Field field, final Integer row) {
+        int countFigure = 0;
+        for (int x = 0; x < field.getSize(); x++) {
+            final Point p = new Point(x, row);
+            if (field.getFigure(p) != null)
+                countFigure++;
+        }
+        return countFigure;
     }
 }
