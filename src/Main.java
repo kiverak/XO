@@ -10,6 +10,7 @@ public class Main {
 
     public static void main(String... args) {
         final Field field = new Field();
+        final Game game = new Game();
         final CurrentMoveController cmc = new CurrentMoveController();
         ConsoleView print = new ConsoleView();
         WinnerController wc = new WinnerController();
@@ -27,12 +28,12 @@ public class Main {
                 final Figure figure = ((i * 3 + i2) % 2 == 0 ? X : O);
                 field.setFigure(p, figure);
                 //System.out.printf("putting figure: %s to the: X:%d Y:%d\n", figure, p.x, p.y);
-                if (cmc.currentMove(field).equals(figure)) {
-                    throw new RuntimeException(String.format("returns %s for the field: \n%s", figure, print.show(field)));
-                }
+//                if (cmc.currentMove(field).equals(figure)) {
+//                    throw new RuntimeException(String.format("returns %s for the field: \n%s", figure, print.show(game)));
+//                }
             }
 
-        print.show(field);
+        print.show(game);
         System.out.println("The winner is " + wc.getWinner(field));
     }
 }
