@@ -5,7 +5,7 @@ import io.hexlet.xo.model.Field;
 import io.hexlet.xo.model.Figure;
 import io.hexlet.xo.model.Point;
 
-public class ConsoleView {
+public class ConsoleView implements ICoordinateGetter{
 
     private Game game;
     private final StringBuilder fieldBuilder = new StringBuilder();
@@ -14,6 +14,11 @@ public class ConsoleView {
 
     public ConsoleView(Game game) {
         this.game = game;
+    }
+
+    @Override
+    public Point getMoveCoordinate(Field field) {
+        return new Point(1, 1);
     }
 
     public void show(final Game game) {
