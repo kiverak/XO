@@ -17,8 +17,8 @@ public class ConsoleView implements ICoordinateGetter{
     }
 
     @Override
-    public Point getMoveCoordinate(Field field) {
-        return new Point(1, 1);
+    public Point getMoveCoordinate(final Field field) {
+        return new Point(0, 0);
     }
 
     public void show(final Game game) {
