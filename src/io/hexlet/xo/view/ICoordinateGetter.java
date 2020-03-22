@@ -5,6 +5,6 @@ import io.hexlet.xo.model.Point;
 
 public interface ICoordinateGetter {
 
-    public Point getMoveCoordinate(Field field);
+    Point getMoveCoordinate(final Field field);
 
 }

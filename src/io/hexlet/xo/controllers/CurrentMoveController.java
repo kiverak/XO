@@ -1,26 +1,25 @@
 package io.hexlet.xo.controllers;
 
+import io.hexlet.xo.model.Point;
 import io.hexlet.xo.model.Field;
 import io.hexlet.xo.model.Figure;
-import io.hexlet.xo.model.Point;
-import static io.hexlet.xo.model.Figure.O;
-import static io.hexlet.xo.model.Figure.X;
+import io.hexlet.xo.model.exceptions.InvalidPointException;
 
 public class CurrentMoveController {
 
-    public Figure currentMove(Field field) {
-        int numOfX = 0;
-        int numOfO = 0;
-        Point p = new Point(0, 0);
-        for (int i = 0; i < field.getSize(); i++)
-            for (int j = 0; j < field.getSize(); j++) {
-                p.setX(i);
-                p.setY(j);
-                if (field.getFigure(p) == X) numOfX++;
-                if (field.getFigure(p) == O) numOfO++;
-            }
-        if (numOfX == numOfO) return X;
-        else return O;
+    public Figure currentMove(final Field field) {
+        int countFigure = 0;
+        for (int x = 0; x < field.getSize(); x++) {
+            countFigure += countFiguresInTheRow(field, x);
+        }
+
+        if (countFigure == field.getSize() * field.getSize())
+            return null;
+
+        if (countFigure % 2 == 0)
+            return Figure.X;
+
+        return Figure.O;
     }
 
     private int countFiguresInTheRow(final Field field, final Integer row) {
